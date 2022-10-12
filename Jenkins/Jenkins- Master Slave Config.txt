@@ -49,6 +49,11 @@ amazon-linux-extras install epel
 #Install Java: 
 amazon-linux-extras install java-openjdk11
 
+#Install Node
+
+curl --silent --location https://rpm.nodesource.com/setup_16.x | bash -
+$ yum -y install nodejs
+
 #Install GIT:
 
 yum install git
