@@ -1,0 +1,25 @@
+pipeline {
+    agent {
+        label 'npmslave'
+    }
+    stages {
+        stage('Get Repository') {
+            steps {
+                git branch: 'main', url: 'https://github.com/nshukla6/post'
+            }
+        }
+        stage('Build the artifact') {
+            steps {
+                sh "npm install"
+                sh "npm run build"
+            }
+        }
+        stage('Deploy app') {
+            steps {
+                script {
+                    sshPublisher(publishers: [sshPublisherDesc(configName: 'QA-Server', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: 'build', remoteDirectorySDF: false, removePrefix: 'build/', sourceFiles: 'build/**/*')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+                }
+            }
+        }
+    }
+}
