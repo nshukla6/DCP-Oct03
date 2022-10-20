@@ -76,10 +76,7 @@ Execute the below commmand in Worker Nodes, to join all the worker nodes with Ma
 
 kubeadm join <master-ip>:6443 --token 13zm9f.6r9licbxs3eqwvf2 --discovery-token-ca-cert-hash sha256:60a20111ece6485c5225736bbcdc6a54d54b196340e30b3b1fcc5c4dd3194f60
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#kubeadm join 172.31.11.38:6443 --token 13zm9f.6r9licbxs3eqwvf2 --discovery-token-ca-cert-hash sha256:60a20111ece6485c5225736bbcdc6a54d54b196340e30b3b1fcc5c4dd3194f60
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
