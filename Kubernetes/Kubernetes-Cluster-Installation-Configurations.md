@@ -48,7 +48,7 @@ systemctl start kubelet
 Only on Master Node:
 ~~~~~~~~~~~~~~~~~~~~~
 
-sudo kubeadm init --apiserver-advertise-address=172.31.11.38 --pod-network-cidr=192.168.0.0/16 --ignore-preflight-errors=NumCPU --ignore-preflight-errors=Mem
+sudo kubeadm init --apiserver-advertise-address=<private-ip> --pod-network-cidr=192.168.0.0/16 --ignore-preflight-errors=NumCPU --ignore-preflight-errors=Mem
 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
@@ -72,12 +72,9 @@ kubectl describe nodes
 Execute the below commmand in Worker Nodes, to join all the worker nodes with Master :
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#kubeadm join 172.31.39.190:6443 --token 4h1iij.rb53c4jhj2fkl3qm --discovery-token-ca-cert-hash sha256:7c7a55d5559ddc181a63376895f7097fe6a054a9ab1f3f613dadfd06cf167143
-#kubeadm join 172.31.45.213:6443 --token 27yrml.4cmz22e0jtkjfzvl --discovery-token-ca-cert-hash sha256:8284680195b668b66ebf37629960bab007f9700f590b48cdb9de60799d4aca1b
-#kubeadm join 172.31.36.201:6443 --token 69a43n.i9f5sq4kt383lrik --discovery-token-ca-cert-hash sha256:ef813fb9c38653d61bf0b5739b419542e7ac1f94f4767319a8bea8e3c300cc72
-#kubeadm join 172.31.5.173:6443 --token aoztca.d1ol6rk8iv7yekvi --discovery-token-ca-cert-hash sha256:b5ed2a087727283b51dd7b3956226eacf5a592db87cb679db691fde935b4cf39
+# below output you will get after you run kubeadm init in master node
 
-kubeadm join 172.31.11.38:6443 --token 13zm9f.6r9licbxs3eqwvf2 --discovery-token-ca-cert-hash sha256:60a20111ece6485c5225736bbcdc6a54d54b196340e30b3b1fcc5c4dd3194f60
+kubeadm join <master-ip>:6443 --token 13zm9f.6r9licbxs3eqwvf2 --discovery-token-ca-cert-hash sha256:60a20111ece6485c5225736bbcdc6a54d54b196340e30b3b1fcc5c4dd3194f60
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #kubeadm join 172.31.11.38:6443 --token 13zm9f.6r9licbxs3eqwvf2 --discovery-token-ca-cert-hash sha256:60a20111ece6485c5225736bbcdc6a54d54b196340e30b3b1fcc5c4dd3194f60
