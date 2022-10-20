@@ -214,3 +214,192 @@ docker push loksaieta/debian-with-git1:v1.0
 #docker push loksaieta/debian-git:v1.1
 
 ##Docker File
+###Storage
+### Volumes:
+
+docker run centos sleep 30
+
+docker volume list
+
+docker volume create v1 
+
+docker volume inspect v1
+
+docker run -it --name=testvol1 --mount source=v1,destination=/v1 bash 
+
+docker run -it --mount source=v1,destination=/v1 centos bash
+
+stateless & Stateful Appln.
+
+
+
+java n devops aws devops ==>
+
+d...........................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###Docker-Compose
+
+sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+
+
+wget https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)
+
+sudo mv docker-compose-$(uname -s)-$(uname -m) /usr/local/bin/docker-compose
+
+sudo chmod -v +x /usr/local/bin/docker-compose
+
+docker-compose version
+
+
+services:
+  web:
+    image: “LoksaiETA/simple-webapp"
+  database:
+    image: “mongodb“
+  messaging:
+    image: "redis“ 
+  orchestration:
+    image:	“ansible“
+
+Docker-Swarm
+8tgOic
+
+Create any new code version... -- dockerised -- push to docker registry 
+
+
+Deploy a web appln.
+
+Login_screen service (UI)
+
+Database SErvice - 
+
+
+
+Virtual Machine - Node - public_ip 
+
+c1,c2,c3,c4
+
+Port Mapping.. 
+
+
+
+Container :
+Jenkins - 8080
+tomcat - 8089
+
+Docker Compose :
+###sudo curl -L "https://github.com/docker/compose/releases/download/<version>/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+###sudo chmod +x /usr/local/bin/docker-compose
+
+###https://github.com/docker/compose/releases/tag/v2.11.2
+
+sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+## edit .bash_profile
+
+#Update 
+#PATH=$PATH:$HOME/bin:/usr/local/bin
+source ~/.bash_profile
+
+docker-compose --version
+
+docker-compose.yaml Node - public_ip
+
+Node1:
+
+Container 1
+			Jenkins - automated Build
+Container 2
+			Testing - Selenium tools 
+Container 3
+			Tomcat/Nginx - 
+
+Node2:
+
+Container 1
+			Jenkins - automated Build
+Container 2
+			Testing - Selenium tools 
+Container 3
+			Tomcat/Nginx - 
+
+
+Container 1
+			Jenkins - automated Build
+Container 2
+			Testing - Selenium tools 
+Container 3
+			Tomcat/Nginx - 
+
+Container 1
+			Jenkins - automated Build
+Container 2
+			Testing - Selenium tools 
+Container 3
+			Tomcat/Nginx - 
+
+Container 1
+			Jenkins - automated Build
+Container 2
+			Testing - Selenium tools 
+Container 3
+			Tomcat/Nginx - 
+
+Container 1
+			Jenkins - automated Build
+Container 2
+			Testing - Selenium tools 
+Container 3
+			Tomcat/Nginx - 
+			
+Docker Swarm - Container Orchestrator 
+
+Kubernetes. 
+			
+
+Docker Swarm				(vs)				Kubernetes    - Kubernetes Dashboard (GUI)
+
+- Both are Container Orchestrator  (pods)
+
+Create some Services... 
+
+100 Containers ---> all are meant for my prod environment. 
+
+Availability!  of Containers ????????
+
+replicas --->  3 containers of same image tomcat (webappln.)
+
+Load balancing! 
+
+
